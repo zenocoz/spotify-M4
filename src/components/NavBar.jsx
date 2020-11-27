@@ -153,6 +153,9 @@ export default function NavBar() {
             </a>
           </div>
           <div className="row list-button-wrapper justify-content-center"></div>
+
+          {/* ------------------------------Content is displayed here---------------------------------------------- */}
+
           <section className="index__cards container">
             <Router>
               <Route path="/" exact component={Home} />

@@ -17,9 +17,6 @@ function App() {
     // </div>
     <div className="App">
       <NavBar />
-      {/* <Route path="/" exact component={Home} />
-        <Route path="/artist" exact component={Artist} />
-        <Route path="/album" exact component={Album} /> */}
     </div>
   )
 }
