@@ -1,12 +1,12 @@
 import React from "react"
 
-export default function SingleAlbum() {
+export default function SingleAlbum(props) {
   return (
     <div className="card card-spotify">
       <div className="img-albums">
         <div className="imgAlbum">
           <img
-            src="https://images-na.ssl-images-amazon.com/images/I/71V74NRrgPL._AC_SL1200_.jpg"
+            src={props.singleAlbum.album.cover}
             className="card-img-top d-flex"
             alt="..."
           />

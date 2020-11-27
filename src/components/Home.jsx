@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import SingleAlbum from "./SingleAlbum"
+import AlbumList from "./AlbumList"
 
 export default class Home extends React.Component {
   state = {
@@ -24,8 +25,8 @@ export default class Home extends React.Component {
       })
       if (response.ok) {
         let albums = await response.json()
-        console.log(albums)
-        this.setState({albums: albums})
+        console.log(albums.data)
+        this.setState({albums: albums.data})
       } else {
         alert("something went wrong with the fetch response")
       }
@@ -45,7 +46,7 @@ export default class Home extends React.Component {
             className="col-6 col-md-4 col-lg-3 col-xl-2 text-center d-flex"
             style={{marginBottom: "2rem"}}
           >
-            <SingleAlbum />
+            <AlbumList albums={this.state.albums} />
           </div>
         </div>
       </>
