@@ -42,12 +42,11 @@ export default class Home extends React.Component {
           Home Page
         </h3>
         <div className="row">
-          <div
+          <AlbumList albums={this.state.albums} />
+          {/* <div
             className="col-6 col-md-4 col-lg-3 col-xl-2 text-center d-flex"
             style={{marginBottom: "2rem"}}
-          >
-            <AlbumList albums={this.state.albums} />
-          </div>
+          ></div> */}
         </div>
       </>
     )
