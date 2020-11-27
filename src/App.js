@@ -3,21 +3,38 @@ import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom"
 import Home from "./components/Home"
 import Artist from "./components/Artist"
 import Album from "./components/Album"
-import NavBar from "./components/NavBar"
-
+import Layout from "./components/Layout"
 function App() {
   return (
-    // <div className="App">
-    //   <Router>
-    //     <NavBar />
-    //     <Route path="/" exact component={Home} />
-    //     <Route path="/artist" exact component={Artist} />
-    //     <Route path="/album" exact component={Album} />
-    //   </Router>
-    // </div>
-    <div className="App">
-      <NavBar />
-    </div>
+    <Router>
+      <Route
+        path="/"
+        exact
+        render={(props) => (
+          <Layout {...props}>
+            <Home {...props} />
+          </Layout>
+        )}
+      />
+      <Route
+        path="/artist"
+        exact
+        render={(props) => (
+          <Layout {...props}>
+            <Artist {...props} />
+          </Layout>
+        )}
+      />
+      <Route
+        path="/album/:id"
+        exact
+        render={(props) => (
+          <Layout {...props}>
+            <Album {...props} />
+          </Layout>
+        )}
+      />
+    </Router>
   )
 }
 

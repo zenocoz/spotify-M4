@@ -1,8 +1,12 @@
 import React from "react"
+import {Link, withRouter} from "react-router-dom"
 
-export default function SingleAlbum(props) {
+function SingleAlbum(props) {
   return (
     <div
+      onClick={() => {
+        props.history.push("/album/" + props.singleAlbum.album.id)
+      }}
       className="col-6 col-md-4 col-lg-3 col-xl-2 text-center d-flex"
       style={{marginBottom: "2rem"}}
     >
@@ -14,6 +18,7 @@ export default function SingleAlbum(props) {
               className="card-img-top d-flex"
               alt="..."
             />
+
             <div className="play_container">
               <i className="far fa-play-circle playFav"></i>
             </div>
@@ -30,3 +35,5 @@ export default function SingleAlbum(props) {
     </div>
   )
 }
+
+export default withRouter(SingleAlbum)

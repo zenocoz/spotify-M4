@@ -9,10 +9,14 @@ export default class Home extends React.Component {
 
   componentDidMount = async () => {
     this.fetchRandomAlbums()
+    console.log(this.props)
   }
 
+  handleSelectedAlbum = (id) => {}
+
   fetchRandomAlbums = async () => {
-    let url = "https://deezerdevs-deezer.p.rapidapi.com/search?q=whatever"
+    let query = "metallica"
+    let url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${query}`
     let headers = {
       "x-rapidapi-key": "f8be2f0c65mshfad5043cb400d5dp12eb36jsn70f4e3e3750f",
       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",

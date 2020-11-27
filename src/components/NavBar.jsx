@@ -160,7 +160,7 @@ export default function NavBar() {
             <Router>
               <Route path="/" exact component={Home} />
               <Route path="/artist" exact component={Artist} />
-              <Route path="/album" exact component={Album} />
+              <Route path="/album/:id" exact component={Album} />
             </Router>
             {/* <h3 className="text-left my-3" style={{fontWeight: "bold"}}>
               #THROWBACKTHURSDAY
