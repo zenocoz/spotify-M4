@@ -17,7 +17,7 @@ export default class Home extends React.Component {
   fetchRandomAlbums = async () => {
     let query = "metallica"
     let url = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${query}`
-    let headers = {
+    const headers = {
       "x-rapidapi-key": "f8be2f0c65mshfad5043cb400d5dp12eb36jsn70f4e3e3750f",
       "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
     }
