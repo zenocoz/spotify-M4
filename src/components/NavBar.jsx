@@ -1,5 +1,9 @@
 import React from "react"
 import Player from "./Player"
+import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom"
+import Home from "./Home"
+import Artist from "./Artist"
+import Album from "./Album"
 
 export default function NavBar() {
   return (
@@ -112,14 +116,14 @@ export default function NavBar() {
         </div>
 
         <main className="container-fluid container-index position-relative">
-          <div className="navArrows">
+          {/* <div className="navArrows">
             <a href="#" disabled>
               <i className="fas fa-chevron-left"></i>
             </a>
             <a href="albums.html">
               <i className="fas fa-chevron-right"></i>
             </a>
-          </div>
+          </div> */}
 
           <div className="d-none bedge" id="bedge">
             Album added to your favorite
@@ -150,9 +154,14 @@ export default function NavBar() {
           </div>
           <div className="row list-button-wrapper justify-content-center"></div>
           <section className="index__cards container">
-            <h3 className="text-left my-3" style={{fontWeight: "bold"}}>
+            <Router>
+              <Route path="/" exact component={Home} />
+              <Route path="/artist" exact component={Artist} />
+              <Route path="/album" exact component={Album} />
+            </Router>
+            {/* <h3 className="text-left my-3" style={{fontWeight: "bold"}}>
               #THROWBACKTHURSDAY
-            </h3>
+            </h3> */}
 
             {/* <div className="row">
             <div
@@ -507,9 +516,9 @@ export default function NavBar() {
               </div>
             </div>
           </div> */}
-            <h3 className="text-left my-3" style={{fontWeight: "bold"}}>
+            {/* <h3 className="text-left my-3" style={{fontWeight: "bold"}}>
               LISTS
-            </h3>
+            </h3> */}
 
             <div className="row fetch1 rows"></div>
             <div className="row fetch2 rows"></div>
