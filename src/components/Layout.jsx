@@ -1,5 +1,6 @@
 import React from "react"
 import Player from "./Player"
+import {Link} from "react-router-dom"
 
 export default function Layout(props) {
   return (
@@ -12,8 +13,7 @@ export default function Layout(props) {
             </a>
 
             <div className=" sideNav__nav-links d-flex flex-row flex-md-column text-left">
-              <a href="index.html">
-                {" "}
+              <Link to="/">
                 <svg
                   className="mr-2"
                   viewBox="0 0 512 512"
@@ -26,7 +26,8 @@ export default function Layout(props) {
                   ></path>
                 </svg>{" "}
                 <span>Home</span>
-              </a>
+              </Link>
+
               <a href="#">
                 <svg
                   className="mr-2"
@@ -154,9 +155,9 @@ export default function Layout(props) {
 
           <section className="index__cards container">
             {props.children}
-
+            {/* 
             <div className="row fetch1 rows"></div>
-            <div className="row fetch2 rows"></div>
+            <div className="row fetch2 rows"></div> */}
           </section>
 
           <div
