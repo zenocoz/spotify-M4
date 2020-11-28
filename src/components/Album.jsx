@@ -1,40 +1,41 @@
 import React from "react"
 import {Link} from "react-router-dom"
 import SingleSong from "./SingleSong"
+import {fetchSingleAlbum} from "../data_source"
 
 class Album extends React.Component {
   state = {
     album: null,
   }
 
-  componentDidMount = () => {
+  componentDidMount = async () => {
     let albumId = this.props.match.params.id
-    this.fetchSingleAlbum(albumId)
+    this.setState({album: await fetchSingleAlbum(albumId)})
   }
 
-  fetchSingleAlbum = async (id) => {
-    const url = "https://deezerdevs-deezer.p.rapidapi.com/album/"
-    const headers = {
-      "x-rapidapi-key": "f8be2f0c65mshfad5043cb400d5dp12eb36jsn70f4e3e3750f",
-      "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
-    }
+  // fetchSingleAlbum = async (id) => {
+  //   const url = "https://deezerdevs-deezer.p.rapidapi.com/album/"
+  //   const headers = {
+  //     "x-rapidapi-key": "f8be2f0c65mshfad5043cb400d5dp12eb36jsn70f4e3e3750f",
+  //     "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+  //   }
 
-    try {
-      let response = await fetch(url + id, {
-        method: "GET",
-        headers: headers,
-      })
-      if (response.ok) {
-        let album_data = await response.json()
-        console.log(album_data)
-        this.setState({album: album_data})
-      } else {
-        alert("something went wrong fetching a single album")
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  //   try {
+  //     let response = await fetch(url + id, {
+  //       method: "GET",
+  //       headers: headers,
+  //     })
+  //     if (response.ok) {
+  //       let album_data = await response.json()
+  //       console.log(album_data)
+  //       this.setState({album: album_data})
+  //     } else {
+  //       alert("something went wrong fetching a single album")
+  //     }
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   render() {
     return (
