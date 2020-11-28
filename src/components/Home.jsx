@@ -5,10 +5,14 @@ import AlbumList from "./AlbumList"
 export default class Home extends React.Component {
   state = {
     albums: [],
+    loading: true,
   }
 
-  componentDidMount = async () => {
-    this.fetchRandomAlbums()
+  componentDidMount = () => {
+    setTimeout(() => {
+      this.fetchRandomAlbums()
+    }, 3000)
+
     console.log(this.props)
   }
 
@@ -30,7 +34,7 @@ export default class Home extends React.Component {
       if (response.ok) {
         let albums = await response.json()
         console.log(albums.data)
-        this.setState({albums: albums.data})
+        this.setState({albums: albums.data, loading: false})
       } else {
         alert("something went wrong with the fetch response")
       }
@@ -46,7 +50,7 @@ export default class Home extends React.Component {
           Home Page
         </h3>
         <div className="row">
-          <AlbumList albums={this.state.albums} />
+          <AlbumList albums={this.state.albums} loading={this.state.loading} />
           {/* <div
             className="col-6 col-md-4 col-lg-3 col-xl-2 text-center d-flex"
             style={{marginBottom: "2rem"}}
