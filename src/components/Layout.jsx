@@ -1,25 +1,9 @@
 import React from "react"
 import Player from "./Player"
 import {Link} from "react-router-dom"
-import {Form, FormControl} from "react-bootstrap"
+import SearchBar from "./SearchBar"
 
 class Layout extends React.Component {
-  state = {
-    search_value: "",
-  }
-
-  handleChange = (e) => {
-    console.log(e.target.value)
-    this.setState({search_value: e.target.value})
-  }
-
-  handleRequest = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault()
-      this.props.history.push("/artist/" + e.target.value)
-    }
-  }
-
   render() {
     return (
       <>
@@ -48,8 +32,9 @@ class Layout extends React.Component {
                   </svg>{" "}
                   <span>Home</span>
                 </Link>
+                <SearchBar />
 
-                <Form inline>
+                {/* <Form inline>
                   <FormControl
                     type="text"
                     placeholder="Search"
@@ -71,7 +56,7 @@ class Layout extends React.Component {
                     ></path>
                   </svg>
                   <span>Search</span>
-                </Form>
+                </Form> */}
 
                 <a href="artists.html">
                   <svg

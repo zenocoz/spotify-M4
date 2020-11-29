@@ -456,7 +456,7 @@ a.navBar__link.active::after {
 /*----------------------------------------Jumbotron Artist Page--------------------------------------------*/
 
 .jumbotron {
-  background-image: url("https://cdn.britannica.com/83/149183-050-25913164/Queen.jpg");
+  /* background-image: url("https://cdn.britannica.com/83/149183-050-25913164/Queen.jpg"); */
   background-size: cover;
   margin-bottom: 0 !important;
   position: relative;
