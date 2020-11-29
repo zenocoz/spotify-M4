@@ -4,6 +4,8 @@ import Home from "./components/Home"
 import Artist from "./components/Artist"
 import Album from "./components/Album"
 import Layout from "./components/Layout"
+import {ApiFetchSubscriber} from "./components/ApiFetchSubscriber"
+
 function App() {
   return (
     <Router>
