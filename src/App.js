@@ -17,7 +17,7 @@ function App() {
         )}
       />
       <Route
-        path="/artist"
+        path="/artist/:id"
         exact
         render={(props) => (
           <Layout {...props}>
