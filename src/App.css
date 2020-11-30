@@ -457,7 +457,7 @@ a.navBar__link.active::after {
 
 .jumbotron {
   /* background-image: url("https://cdn.britannica.com/83/149183-050-25913164/Queen.jpg"); */
-  background-size: cover;
+  /* background-size: cover; */
   margin-bottom: 0 !important;
   position: relative;
   min-height: 40vh;

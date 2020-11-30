@@ -44,7 +44,8 @@ class Artist extends React.Component {
               <div
                 class="jumbotron jumbotron-fluid"
                 style={{
-                  backgroundImage: url(this.state.artist_data.picture_medium), //TODO not working
+                  backgroundImage: `url(${this.state.artist_data.picture_xl})`,
+                  bakcgroundSize: "cover",
                 }}
               >
                 <div class="jumbo__overlay"></div>
